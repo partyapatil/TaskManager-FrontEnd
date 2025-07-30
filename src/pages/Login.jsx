@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setCredentials,
   setCredentialsWithUser,
-} from "../redux/slices/authSlice";
+} from "../redux/slices/authSlice.js";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Button } from "@headlessui/react";
 import { useLoginMutation } from "../redux/slices/authApiSlice.js";
@@ -27,7 +27,7 @@ const Login = () => {
     }
   }, [user]);
 
-  const submitHandler = async (data: any) => {
+  const submitHandler = async (data) => {
     // fetch("http://localhost:5000/reset")
     console.log(data);
     try {
