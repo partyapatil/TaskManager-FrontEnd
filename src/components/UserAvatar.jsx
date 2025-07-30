@@ -5,7 +5,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getInitials } from "../utils";
-import { useLogoutRTKMutation } from "../redux/slices/authApislice";
+import { useLogoutRTKMutation } from "../redux/slices/UserCrediatiols";
 import { logout } from "../redux/slices/authSlice";
 import ChangePassword from "./ChangePassword";
 import AddUser from "./AddUser";

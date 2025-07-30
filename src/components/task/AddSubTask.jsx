@@ -3,7 +3,7 @@ import ModalWrapper from "../ModalWrapper";
 import { Dialog } from "@headlessui/react";
 import Textbox from "../Textbox";
 import Button from "../Button";
-import { useCreateSubTaskMutation } from "../../redux/slices/taskApislice";
+import { useCreateSubTaskMutation } from "../../redux/slices/TaskApisliceMutation";
 import { toast } from "react-toastify";
 
 const AddSubTask = ({ open, setOpen, id }) => {

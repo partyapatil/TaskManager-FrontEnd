@@ -9,7 +9,7 @@ import { Menu, Transition } from "@headlessui/react";
 import AddTask from "./AddTask";
 import AddSubTask from "./AddSubTask";
 import ConfirmatioDialog from "../Dialogs";
-import { useDuplicateTaskMutation, useTrashTaskMutation } from "../../redux/slices/taskApislice";
+import { useDuplicateTaskMutation, useTrashTaskMutation } from "../../redux/slices/TaskApisliceMutation";
 import { toast } from "react-toastify";
 const TaskDialog = ({ task }) => {
   const [open, setOpen] = useState(false);

@@ -13,7 +13,7 @@ import { FaList } from "react-icons/fa";
 import UserInfo from "../UserInfo";
 import Button from "../Button";
 import ConfirmatioDialog from "../Dialogs";
-import { useTrashTaskMutation } from "../../redux/slices/taskApislice";
+import { useTrashTaskMutation } from "../../redux/slices/TaskApisliceMutation";
 import AddTask from "./AddTask";
 
 const ICONS = {
