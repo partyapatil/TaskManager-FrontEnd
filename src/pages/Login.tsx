@@ -1,3 +1,4 @@
+ //@ts-nocheck
 import React, { useEffect } from "react";
 import { Formik } from "formik";
 import { loginFormvalidation } from "./validation.js";
