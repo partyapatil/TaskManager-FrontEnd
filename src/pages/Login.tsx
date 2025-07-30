@@ -27,6 +27,7 @@ const Login = () => {
   }, [user]);
 
   const submitHandler = async (data: any) => {
+    // fetch("http://localhost:5000/reset")
     console.log(data);
     try {
       const result = await login(data).unwrap();

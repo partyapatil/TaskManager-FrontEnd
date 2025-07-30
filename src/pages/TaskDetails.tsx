@@ -3,6 +3,7 @@ import moment from "moment";
 import React, { useState } from "react";
 import { FaBug, FaTasks, FaThumbsUp, FaUser } from "react-icons/fa";
 import { GrInProgress } from "react-icons/gr";
+import { BiImageAlt, BiFile, BiTable, BiText, BiFileBlank, BiDownload } from 'react-icons/bi';
 import {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
@@ -105,8 +106,7 @@ const typeOptions = [
   "completed",
   "commented"
 ];
-
-
+console.log(data)
   //console.log(data?.task);
   if (isLoading) {
     return (
@@ -115,6 +115,46 @@ const typeOptions = [
       </div>
     );
   }
+
+  // Helper function to get file type from URL
+const getFileType = (url) => {
+  const extension = url.split('.').pop().split('?')[0].toLowerCase();
+  
+  const imageTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+  const docTypes = ['pdf', 'doc', 'docx'];
+  const sheetTypes = ['csv', 'xls', 'xlsx'];
+  const textTypes = ['txt'];
+  
+  if (imageTypes.includes(extension)) return 'image';
+  if (docTypes.includes(extension)) return 'document';
+  if (sheetTypes.includes(extension)) return 'spreadsheet';
+  if (textTypes.includes(extension)) return 'text';
+  
+  return 'file';
+};
+
+// Helper function to extract filename from URL
+const getFileNameFromUrl = (url) => {
+  try {
+    const pathname = new URL(url).pathname;
+    return pathname.split('/').pop().split('?')[0];
+  } catch {
+    return url.split('/').pop().split('?')[0];
+  }
+};
+
+// File Icon Component
+const FileIcon = ({ type, className }) => {
+  const icons = {
+    image: <BiImageAlt className={className} />,
+    document: <BiFile className={className} />,
+    spreadsheet: <BiTable className={className} />,
+    text: <BiText className={className} />,
+    file: <BiFileBlank className={className} />,
+  };
+  
+  return icons[type] || icons.file;
+};
   return (
     <div className="w-full flex flex-col gap-3 mb-4 overflow-y-hidden">
       <h1 className="text-2xl text-gray-600 font-bold">{task?.title}</h1>
@@ -225,20 +265,51 @@ const typeOptions = [
                 </div>
               </div>
               {/* RIGHT */}
-              <div className="w-full md:w-1/2 space-y-8">
-                <p className="text-lg font-semibold">ASSETS</p>
-
-                <div className="w-full grid grid-cols-2 gap-4">
-                  {task?.assets?.map((el, index) => (
-                    <img
-                      key={index}
-                      src={el}
-                      alt={task?.title}
-                      className="w-full rounded h-28 md:h-36 2xl:h-52 cursor-pointer transition-all duration-700 hover:scale-125 hover:z-50"
-                    />
-                  ))}
-                </div>
-              </div>
+         <div className="w-full md:w-1/2 space-y-8">
+  <p className="text-lg font-semibold">ASSETS</p>
+  <div className="w-full grid grid-cols-2 gap-4">
+    {task?.assets?.map((el, index) => {
+      const fileType = getFileType(el);
+      
+     return (
+  <div key={index} className="relative group">
+    {fileType === 'image' ? (
+      <div className="relative w-full rounded overflow-hidden h-28 md:h-36 2xl:h-52">
+        <img
+          src={el}
+          alt={task?.title}
+          className="w-full h-full object-cover cursor-pointer transition-all duration-700 hover:scale-125 hover:z-50"
+        />
+        <a
+          href={el}
+          download={getFileNameFromUrl(el)}
+          className="absolute bottom-2 right-2 bg-black/50 text-white p-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+          onClick={(e) => e.stopPropagation()} // Prevent triggering parent click
+        >
+          <BiDownload className="w-4 h-4" />
+        </a>
+      </div>
+    ) : (
+            <a
+              href={el}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center p-4 border rounded-lg bg-gray-50 hover:bg-gray-100 h-28 md:h-36 2xl:h-52"
+            >
+              <FileIcon type={fileType} className="w-12 h-12 mb-2" />
+              <span className="text-xs text-center truncate w-full">
+                {getFileNameFromUrl(el)}
+              </span>
+              <span className="text-xs text-gray-500 mt-1">
+                {fileType.toUpperCase()} File
+              </span>
+            </a>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
             </div>
           </>
         ) : (
