@@ -13,7 +13,7 @@ import { tasks } from "../assets/data";
 import Table from "../components/task/Table";
 import AddTask from "../components/task/AddTask";
 import Loading from "../components/Loading";
-import {useGetAlltasksQuery} from "../redux/slices/taskApislice"
+import {useGetAlltasksQuery} from "../redux/slices/TaskApisliceMutation"
 const TABS = [
   { title: "Board View", icon: <MdGridView /> },
   { title: "List View", icon: <FaList /> },

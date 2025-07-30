@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setCredentials,
   setCredentialsWithUser,
-} from "../redux/slices/authSlice.js";
+} from "../redux/slices/AuthSliceMutation.js";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Button } from "@headlessui/react";
-import { useLoginMutation } from "../redux/slices/Testing.js";
+import { useLoginMutation } from "../redux/slices/UserCrediatiols.js";
 import { toast } from "react-toastify";
 // import Loading from "../components/Loading"
 

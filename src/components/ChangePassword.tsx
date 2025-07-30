@@ -5,7 +5,7 @@ import Button from "./Button";
 import Loading from "./Loading";
 import ModalWrapper from "./ModalWrapper";
 import Textbox from "./Textbox";
-import { useChagePasswordMutation } from "../redux/slices/userApislice";
+import { useChagePasswordMutation } from "../redux/slices/UserApiSliceMutation";
 import { toast } from "sonner";
 
 const ChangePassword = ({ open, setOpen }) => {

@@ -23,7 +23,7 @@ import Button from "../components/Button";
 import {
   useGetSingletaskQuery,
   usePostTaskActivityMutation,
-} from "../redux/slices/taskApiSlice";
+} from "../redux/slices/TaskApisliceMutation";
 
 const assets = [
   "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",

@@ -13,8 +13,8 @@ import Button from "../components/Button";
 import { PRIOTITYSTYELS, TASK_TYPE } from "../utils";
 import AddUser from "../components/AddUser";
 import ConfirmatioDialog from "../components/Dialogs";
-import {useGetAlltasksQuery} from "../redux/slices/taskApislice"
-import {useDeleteRestoreTaskMutation} from "../redux/slices/taskApislice"
+import {useGetAlltasksQuery} from "../redux/slices/TaskApisliceMutation"
+import {useDeleteRestoreTaskMutation} from "../redux/slices/TaskApisliceMutation"
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,

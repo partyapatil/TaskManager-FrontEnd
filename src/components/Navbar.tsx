@@ -2,7 +2,7 @@
 import React from "react";
 import { MdOutlineSearch } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { setOpenSidebar } from "../redux/slices/authSlice";
+import { setOpenSidebar } from "../redux/slices/AuthSliceMutation";
 import UserAvatar from "./UserAvatar";
 import NotificationPanel from "./NotificationPanel";
 

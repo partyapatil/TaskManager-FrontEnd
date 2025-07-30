@@ -7,9 +7,9 @@ import { getInitials } from "../utils";
 import clsx from "clsx";
 import ConfirmatioDialog, { UserAction } from "../components/Dialogs";
 import AddUser from "../components/AddUser";
-import { useGetTeamQuery } from "../redux/slices/userApislice";
-import { useUserActionMutation } from "../redux/slices/userApislice";
-import { useDeleteUserMutation } from "../redux/slices/userApislice";
+import { useGetTeamQuery } from "../redux/slices/UserApiSliceMutation";
+import { useUserActionMutation } from "../redux/slices/UserApiSliceMutation";
+import { useDeleteUserMutation } from "../redux/slices/UserApiSliceMutation";
 import { toast } from "react-toastify";
 const Users = () => {
   const [openDialog, setOpenDialog] = useState(false);

@@ -14,7 +14,7 @@ import clsx from "clsx";
 import { Chart } from "../components/Chart";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
 import UserInfo from "../components/UserInfo";
-import { useGetDashboardstatsQuery } from "../redux/slices/taskApislice";
+import { useGetDashboardstatsQuery } from "../redux/slices/TaskApisliceMutation";
 import { useSelector } from "react-redux";
 
 const TaskTable = ({ tasks }) => {

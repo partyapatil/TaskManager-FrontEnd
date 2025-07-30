@@ -11,7 +11,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import { Transition } from '@headlessui/react'
-import { setOpenSidebar } from "./redux/slices/authSlice";
+import { setOpenSidebar } from "./redux/slices/AuthSliceMutation";
 import { IoClose } from 'react-icons/io5'
 import clsx from 'clsx'
 import TaskDetails from './pages/TaskDetails'
