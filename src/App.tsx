@@ -16,7 +16,6 @@ import { IoClose } from 'react-icons/io5'
 import clsx from 'clsx'
 import TaskDetails from './pages/TaskDetails'
 import Trash from './pages/Trash'
-import  "./redux/slices/authApiSlice.js"
 import Users from './pages/Users'
 import { ToastContainer } from 'react-toastify'
 function App() {
