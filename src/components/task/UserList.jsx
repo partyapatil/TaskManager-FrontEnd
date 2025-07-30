@@ -5,7 +5,7 @@ import { summary } from "../../assets/data";
 import clsx from "clsx";
 import { getInitials } from "../../utils";
 import { MdCheck } from "react-icons/md";
-import { useGetTeamQuery } from "../../redux/slices/userApislice";
+import { useGetTeamQuery } from "../../redux/slices/UserApiSliceMutation";
 
 const UserList = ({ setTeam, team }) => {
   const {data}=useGetTeamQuery();

@@ -6,10 +6,10 @@ import { Dialog } from "@headlessui/react";
 import Textbox from "./Textbox";
 import Loading from "./Loading";
 import Button from "./Button";
-import { useRegisterMutation } from "../redux/slices/authApislice";
+import { useRegisterMutation } from "../redux/slices/UserCrediatiols";
 import { toast } from "react-toastify";
-import { useUpdateProfileMutation } from "../redux/slices/userApislice";
-import { setCredentials, setCredentialsWithUser } from "../redux/slices/authSlice";
+import { useUpdateProfileMutation } from "../redux/slices/UserApiSliceMutation";
+import { setCredentials, setCredentialsWithUser } from "../redux/slices/AuthSliceMutation";
 
 const AddUser = ({ open, setOpen, userData }) => {
   let defaultValues = userData ?? {};

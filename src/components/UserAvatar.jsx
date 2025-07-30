@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getInitials } from "../utils";
 import { useLogoutRTKMutation } from "../redux/slices/UserCrediatiols";
-import { logout } from "../redux/slices/authSlice";
+import { logout } from "../redux/slices/AuthSliceMutation";
 import ChangePassword from "./ChangePassword";
 import AddUser from "./AddUser";
 const UserAvatar = () => {
