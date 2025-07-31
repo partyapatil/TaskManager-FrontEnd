@@ -5,7 +5,9 @@ const API_URI = import.meta.env.VITE_API_URI || "http://localhost:5000/api";
 
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: API_URI }),
-  tagTypes: [],
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_URI,
+    credentials: "include", // ✅ REQUIRED for sending cookies
+  }),  tagTypes: [],
   endpoints: () => ({}),
 });
