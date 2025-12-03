@@ -129,15 +129,18 @@ const Login = () => {
                       <div className="text-red-500">{errors.password}</div>
                     ) : null}
                     {isLoading ? (
-                      <></>
-                    ) : (
-                      <Button
-                        type="submit"
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                      >
-                        Login
-                      </Button>
-                    )}
+  <div className="w-full flex justify-center">
+    <div className="w-7 h-7 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+) : (
+  <Button
+    type="submit"
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >
+    Login
+  </Button>
+)}
+
                   </div>
                 </form>
               )}
