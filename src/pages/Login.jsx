@@ -63,8 +63,17 @@ const Login = () => {
             </div>
           </div>
 
+
+
           {/* right side */}
           <div className="w-full md:w-1/3 p-4 md:p-1 flex flex-col justify-center items-center">
+          <div className="w-full md:w-[400px] bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 shadow-sm">
+  <p className="text-blue-700 font-semibold text-base text-center">Demo Login</p>
+  <div className="mt-2 text-sm text-blue-800 flex flex-col gap-1 text-center">
+    <p>Email: <span className="font-medium">pppatil@gmail.com</span></p>
+    <p>Password: <span className="font-medium">pppatil@gmail.com</span></p>
+  </div>
+</div>
             <Formik
               initialValues={{ email: "", password: "" }}
               validationSchema={loginFormvalidation}
@@ -87,7 +96,7 @@ const Login = () => {
                       Welcome back!
                     </p>
                     <p className="text-center text-base text-gray-700 ">
-                      Keep all your credential safge.
+                      Keep all your credential safe.
                     </p>
                   </div>
                   <div className="flex flex-col gap-y-5">
